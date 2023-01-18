@@ -10,7 +10,7 @@
 | lastname            | string            | null:false               |
 | fistkana            | string            | null:false               |
 | lastkana            | string            | null:false               |
-| birthday            | string            | null:false               |
+| birthday            | date              | null:false               |
 | encryptedd_password | string            | null:false               |
 
 ## Association
@@ -26,10 +26,11 @@
 | text               | text              | null:false                   |
 | category_id        | integer           | null:false                   |
 | charge_id          | integer           | null:false                   |
+| state_id           | integer           | null:false                   |
 | prefecture_id      | integer           | null:false                   |
-| day_id             | integer           | null:false                   |
+| severalday_id      | integer           | null:false                   |
 | price              | integer           | null:false                   |
-| user_id            | references        | null:false, foreign_key:true |
+| user               | references        | null:false, foreign_key:true |
 
 ## Association
 
@@ -40,8 +41,8 @@
 
 | Column             | Type              | Option                       |
 | ------------------ | ----------------- | ---------------------------- |
-| user_id            | references        | null:false, foreign_key:true |
-| item_id            | references        | null:false, foreign_key:true |
+| user               | references        | null:false, foreign_key:true |
+| item               | references        | null:false, foreign_key:true |
 
 ## Association
 
@@ -49,17 +50,17 @@
 -belongs_to :item
 -has_one :delivery
 
-## deliverysテーブル
+## deliveriesテーブル
 
 | Column             | Type              | Option                       |
 | ------------------ | ----------------- | ---------------------------- |
-| postcode           | integer           | null:false                   |
+| postcode           | string            | null:false                   |
 | prefecture_id      | integer           | null:false                   |
 | cityadress         | string            | null:false                   |
 | adress             | string            | null:false                   |
 | buildingname       | string            |                              |
-| telphone           | integer           | null:false                   |
-| order_id           | references        | null:false, foreign_key:true |
+| telphone           | string            | null:false                   |
+| order              | references        | null:false, foreign_key:true |
 
 ## Association
 

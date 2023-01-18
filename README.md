@@ -11,7 +11,7 @@
 | fistkana            | string            | null:false               |
 | lastkana            | string            | null:false               |
 | birthday            | date              | null:false               |
-| encryptedd_password | string            | null:false               |
+| encrypted_password  | string            | null:false               |
 
 ## Association
 

@@ -133,6 +133,12 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Lastkana is invalid. Input full-width katakana characters")
       end
+      it '全角文字を含むパスワードでは登録できない' do
+        @user.password = 'テスト123'
+        @user.password_confirmation = 'テスト123'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password is invalid. Include both letters and numbers")
+      end
     end
   end
 end

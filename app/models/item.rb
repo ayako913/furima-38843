@@ -1,4 +1,11 @@
 class Item < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
+  belongs_to :state
+  belongs_to :charge
+  belongs_to :prefecture
+  belongs_to :severalday
+  
   has_one_attached :image
   belongs_to :user
 

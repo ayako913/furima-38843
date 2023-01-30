@@ -10,9 +10,9 @@ class OrderDelivery
     validates :cityaddress
     validates :address
     validates :telphone, numericality: { only_integer: true, message:'is invalid. Input only number' }, format: { with: /\A0\d{9,10}\z/, message:'is too short'}
+    validates :token
   end
   validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" } 
-  validates :token, presence: true
 
   def save
     order = Order.create(item_id: item_id, user_id: user_id)

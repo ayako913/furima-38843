@@ -71,3 +71,5 @@ gem 'active_hash'
 gem 'mail', '2.7.1'
 
 gem 'pry-rails'
+
+gem 'payjp'
